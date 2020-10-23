@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/css/bootstrap.min.css" />
+
+<title>Sign Up</title>
+</head>
+<body>
+
+	<br>
+	<br>
+
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<h1>Sign Up</h1>
+				<form th:action="@{/signup_action}" method="post"
+					th:object="${user}">
+
+
+					<div class="form-group">
+						<input type="text" th:field="*{userName}" class="form-control"
+							autofocus="autofocus" placeholder="User Name" maxlength="30"
+							minlength="5" required />
+					</div>
+					<div class="form-group">
+						<input type="email" th:field="*{email}" class="form-control"
+							autofocus="autofocus" placeholder="Email" maxlength="50"
+							minlength="5" required />
+					</div>
+					<div class="form-group">
+						<input type="password" th:field="*{password}" class="form-control"
+							placeholder="Password" maxlength="30" minlength="5" required />
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<div class="col-sm-6 col-sm-offset-3">
+								<input type="submit" name="login-submit" id="login-submit"
+									class="form-control btn btn-primary" value="Submit" />
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<span>New user? <a href="/" th:href="@{/signin}">Register
+								here</a></span>
+					</div>
+				</form>
+			</div>
+		</div>
+
+
+	</div>
+
+</body>
+</html>
